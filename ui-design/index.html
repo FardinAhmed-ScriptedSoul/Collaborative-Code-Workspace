@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080d18" />
+    <meta
+      name="description"
+      content="A visual concept for a calm, collaborative code workspace."
+    />
+    <title>Orbit Workspace — UI Concept</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Orbit workspace home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" fill="none">
+              <path d="M18 5.5 29 12v12L18 30.5 7 24V12L18 5.5Z" />
+              <path d="m12 18 4 4 8-9" />
+            </svg>
+          </span>
+          <span class="brand-name">orbit<span>.</span></span>
+        </a>
+
+        <div class="topbar-divider" aria-hidden="true"></div>
+
+        <button class="workspace-switcher" type="button" aria-label="Current workspace: Northstar Studio">
+          <span class="workspace-icon">N</span>
+          <span class="workspace-copy">
+            <span class="eyebrow">WORKSPACE</span>
+            <span class="workspace-name">Northstar Studio</span>
+          </span>
+          <svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg>
+        </button>
+
+        <nav class="breadcrumbs" aria-label="Project location">
+          <span class="breadcrumb-muted">Projects</span>
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" /></svg>
+          <span class="breadcrumb-current">Aurora</span>
+        </nav>
+
+        <div class="topbar-actions">
+          <div class="presence-stack" aria-label="3 collaborators online">
+            <span class="avatar avatar-maya" title="Maya Chen">MC</span>
+            <span class="avatar avatar-eli" title="Eli Brooks">EB</span>
+            <span class="avatar avatar-you" title="You">JD</span>
+            <span class="presence-count">+1</span>
+          </div>
+          <span class="saved-state"><span class="saved-dot"></span> All changes saved</span>
+          <button class="icon-button" type="button" aria-label="Notifications">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 8a5.5 5.5 0 0 0-11 0c0 6-2 6-2 7.5h15C17.5 14 15.5 14 15.5 8ZM8 18h4" /></svg>
+            <span class="notification-dot"></span>
+          </button>
+          <button class="profile-button" type="button" aria-label="Open profile menu">JD</button>
+        </div>
+      </header>
+
+      <div class="workspace-layout">
+        <aside class="left-rail" aria-label="Workspace navigation">
+          <div class="rail-section">
+            <p class="rail-label">WORKSPACE</p>
+            <button class="rail-link" type="button">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="3" width="5.5" height="5.5" rx="1.5" /><rect x="11.5" y="3" width="5.5" height="5.5" rx="1.5" /><rect x="3" y="11.5" width="5.5" height="5.5" rx="1.5" /><rect x="11.5" y="11.5" width="5.5" height="5.5" rx="1.5" /></svg>
+              <span>Overview</span>
+            </button>
+            <button class="rail-link active" type="button">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5A1.5 1.5 0 0 1 4.5 4H8l2 2h5.5A1.5 1.5 0 0 1 17 7.5v7a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 14.5v-9Z" /><path d="M3 8h14" /></svg>
+              <span>Projects</span>
+              <span class="rail-count">4</span>
+            </button>
+            <button class="rail-link" type="button">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="7" cy="7" r="3" /><path d="M2.5 16a4.5 4.5 0 0 1 9 0M13 4.5a3 3 0 0 1 0 5.8m1 2a4 4 0 0 1 3.5 3.7" /></svg>
+              <span>People</span>
+            </button>
+          </div>
+
+          <div class="rail-section project-section">
+            <div class="rail-heading">
+              <p class="rail-label">YOUR PROJECTS</p>
+              <button class="tiny-icon-button" type="button" aria-label="Add project">+</button>
+            </div>
+            <button class="project-link selected" type="button"><span class="project-color color-aurora"></span>Aurora<span class="project-live"></span></button>
+            <button class="project-link" type="button"><span class="project-color color-atlas"></span>Atlas API</button>
+            <button class="project-link" type="button"><span class="project-color color-pulse"></span>Pulse Design</button>
+            <button class="project-link" type="button"><span class="project-color color-grove"></span>Grove Mobile</button>
+          </div>
+
+          <div class="rail-bottom">
+            <div class="help-card">
+              <div class="help-orbit" aria-hidden="true"><span></span><i></i></div>
+              <p class="help-title">A little help?</p>
+              <p class="help-copy">Explore the quick guide to get the most out of Orbit.</p>
+              <button class="help-link" type="button">Open guide <span aria-hidden="true">↗</span></button>
+            </div>
+            <button class="rail-link settings-link" type="button">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m8.3 2.8.4-1h2.6l.4 1a6.8 6.8 0 0 1 1.3.8l1-.2 1.3 2.3-.6.8c.2.5.3 1 .3 1.5l.8.7v2.6l-.8.6c0 .6-.1 1.1-.3 1.6l.6.9-1.3 2.2-1-.2a6.8 6.8 0 0 1-1.3.8l-.4 1H8.7l-.4-1a6.8 6.8 0 0 1-1.3-.8l-1 .2-1.3-2.2.6-.9a6 6 0 0 1-.3-1.6l-.8-.6V8.7l.8-.7c0-.5.1-1 .3-1.5l-.6-.8L6 3.4l1 .2c.4-.3.8-.6 1.3-.8Z" /><circle cx="10" cy="10" r="2.5" /></svg>
+              <span>Settings</span>
+            </button>
+          </div>
+        </aside>
+
+        <main class="main-content">
+          <section class="project-heading">
+            <div>
+              <div class="project-kicker"><span class="kicker-spark">✳</span> YOUR TEAM IS IN FLOW</div>
+              <div class="title-row">
+                <h1>Aurora</h1>
+                <button class="visibility-pill" type="button"><span></span> Team project</button>
+              </div>
+              <p class="project-description">A thoughtful space to build something brilliant, together.</p>
+            </div>
+            <div class="heading-actions">
+              <button class="subtle-button" type="button">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" /></svg>
+                Invite
+              </button>
+              <button class="primary-button" id="share-button" type="button">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 3H17v4.5M17 3l-7 7" /><path d="M15 10v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5" /></svg>
+                Share project
+              </button>
+            </div>
+          </section>
+
+          <section class="editor-card" aria-label="Collaborative code editor">
+            <div class="editor-toolbar">
+              <div class="file-tabs" role="tablist" aria-label="Open files">
+                <button class="file-tab active" type="button" role="tab" aria-selected="true" data-file="App.jsx">
+                  <span class="filetype-icon react-icon">⚛</span> App.jsx <span class="tab-close">×</span>
+                </button>
+                <button class="file-tab" type="button" role="tab" aria-selected="false" data-file="styles.css">
+                  <span class="filetype-icon css-icon">#</span> styles.css
+                </button>
+                <button class="new-tab" type="button" aria-label="Open another file">+</button>
+              </div>
+              <div class="editor-actions">
+                <span class="branch-label"><svg viewBox="0 0 18 18" aria-hidden="true"><circle cx="5" cy="4" r="2" /><circle cx="13" cy="14" r="2" /><path d="M5 6v3a5 5 0 0 0 5 5h1M13 12V8a4 4 0 0 0-4-4H7" /></svg> main</span>
+                <span class="toolbar-divider"></span>
+                <button class="run-button" id="run-button" type="button"><span class="play-icon">▶</span> Run</button>
+                <button class="more-button" type="button" aria-label="More editor options">···</button>
+              </div>
+            </div>
+
+            <div class="editor-subbar">
+              <div class="file-path"><span>src</span><span class="path-slash">/</span><strong>App.jsx</strong></div>
+              <div class="editor-presence">
+                <span class="editing-label"><span class="pulse-dot"></span> Maya is editing</span>
+                <span class="tiny-avatar tiny-maya">M</span>
+                <span class="tiny-avatar tiny-eli">E</span>
+                <span class="tiny-avatar tiny-jordan">J</span>
+              </div>
+            </div>
+
+            <div class="code-area" aria-label="Example code preview">
+              <div class="line-numbers" aria-hidden="true">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+              </div>
+              <pre class="code-content" id="code-content"><code><span class="code-line"><span class="syntax-purple">import</span> <span class="syntax-cyan">React</span> <span class="syntax-purple">from</span> <span class="syntax-green">"react"</span><span class="syntax-muted">;</span></span>
+<span class="code-line"><span class="syntax-purple">import</span> <span class="syntax-brace">{</span> <span class="syntax-cyan">Sparkles</span><span class="syntax-brace">,</span> <span class="syntax-cyan">ArrowUpRight</span> <span class="syntax-brace">}</span> <span class="syntax-purple">from</span> <span class="syntax-green">"lucide-react"</span><span class="syntax-muted">;</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="syntax-purple">const</span> <span class="syntax-yellow">welcomeMessage</span> <span class="syntax-muted">=</span> <span class="syntax-green">"Good things happen together."</span><span class="syntax-muted">;</span></span>
+<span class="code-line"></span>
+<span class="code-line"><span class="syntax-purple">export default function</span> <span class="syntax-blue">WorkspaceHome</span><span class="syntax-muted">()</span> <span class="syntax-brace">{</span></span>
+<span class="code-line">  <span class="syntax-purple">return</span> <span class="syntax-muted">(</span></span>
+<span class="code-line">    <span class="syntax-brace">&lt;</span><span class="syntax-red">section</span> <span class="syntax-cyan">className</span><span class="syntax-muted">=</span><span class="syntax-green">"welcome-card"</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">      <span class="syntax-brace">&lt;</span><span class="syntax-red">div</span> <span class="syntax-cyan">className</span><span class="syntax-muted">=</span><span class="syntax-green">"welcome-copy"</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">        <span class="syntax-brace">&lt;</span><span class="syntax-red">span</span> <span class="syntax-cyan">className</span><span class="syntax-muted">=</span><span class="syntax-green">"eyebrow"</span><span class="syntax-brace">&gt;</span>MADE FOR YOUR MOMENT<span class="syntax-brace">&lt;/</span><span class="syntax-red">span</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">        <span class="syntax-brace">&lt;</span><span class="syntax-red">h1</span><span class="syntax-brace">&gt;</span><span class="syntax-muted">{</span>welcomeMessage<span class="syntax-muted">}</span><span class="syntax-brace">&lt;/</span><span class="syntax-red">h1</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">        <span class="syntax-brace">&lt;</span><span class="syntax-red">button</span> <span class="syntax-cyan">className</span><span class="syntax-muted">=</span><span class="syntax-green">"start-button"</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">          Start creating <span class="syntax-brace">&lt;</span><span class="syntax-red">ArrowUpRight</span> <span class="syntax-cyan">size</span><span class="syntax-muted">=</span><span class="syntax-yellow">{</span><span class="syntax-orange">16</span><span class="syntax-yellow">}</span> <span class="syntax-brace">/&gt;</span></span>
+<span class="code-line">        <span class="syntax-brace">&lt;/</span><span class="syntax-red">button</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">      <span class="syntax-brace">&lt;/</span><span class="syntax-red">div</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">      <span class="syntax-brace">&lt;</span><span class="syntax-red">div</span> <span class="syntax-cyan">className</span><span class="syntax-muted">=</span><span class="syntax-green">"orbit-art"</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">        <span class="syntax-brace">&lt;</span><span class="syntax-cyan">Sparkles</span> <span class="syntax-cyan">aria-hidden</span><span class="syntax-muted">=</span><span class="syntax-green">"true"</span> <span class="syntax-brace">/&gt;</span></span>
+<span class="code-line">      <span class="syntax-brace">&lt;/</span><span class="syntax-red">div</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">    <span class="syntax-brace">&lt;/</span><span class="syntax-red">section</span><span class="syntax-brace">&gt;</span></span>
+<span class="code-line">  <span class="syntax-muted">);</span></span>
+<span class="code-line"><span class="syntax-brace">}</span></span></code></pre>
+              <div class="collab-cursor" aria-hidden="true"><span class="cursor-caret"></span><span class="cursor-tag">Maya</span></div>
+              <div class="selection-highlight" aria-hidden="true"></div>
+            </div>
+
+            <footer class="editor-statusbar">
+              <div class="status-left"><span class="status-branch">⌘ main</span><span>↻ 0</span><span>◉ 0</span></div>
+              <div class="status-right"><span>Ln 12, Col 28</span><span>Spaces: 2</span><span>UTF-8</span><span>JavaScript JSX</span><span class="status-check">✓ Prettier</span></div>
+            </footer>
+          </section>
+
+          <section class="activity-strip">
+            <div class="activity-icon"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h7A2.5 2.5 0 0 1 16 5.5v4a2.5 2.5 0 0 1-2.5 2.5h-3l-3.5 3v-3A2.5 2.5 0 0 1 4 9.5v-4Z" /><path d="M7 7h6M7 9.5h4" /></svg></div>
+            <div class="activity-copy"><strong>Good ideas, in context.</strong><span>Start a conversation right next to the code.</span></div>
+            <button class="activity-action" type="button">View activity <span aria-hidden="true">→</span></button>
+            <div class="activity-orbit" aria-hidden="true"><span class="orbit-ring ring-one"></span><span class="orbit-ring ring-two"></span><span class="orbit-core"></span><span class="orbit-star star-one">✦</span><span class="orbit-star star-two">✧</span></div>
+          </section>
+        </main>
+
+        <aside class="right-panel" aria-label="Project conversation">
+          <div class="panel-header">
+            <div>
+              <p class="panel-eyebrow">YOUR PROJECT, TOGETHER</p>
+              <h2>Team chat <span class="online-indicator"></span></h2>
+            </div>
+            <button class="more-button panel-more" type="button" aria-label="Chat options">···</button>
+          </div>
+          <div class="chat-context"><span class="context-icon">✳</span><span>Welcome to <strong># aurora-team</strong></span></div>
+          <div class="message-list" id="message-list" aria-live="polite">
+            <div class="date-divider"><span></span><p>TODAY · 10:42 AM</p><span></span></div>
+            <article class="message">
+              <span class="message-avatar avatar-maya">MC</span>
+              <div class="message-body">
+                <div class="message-meta"><strong>Maya Chen</strong><time>10:42</time></div>
+                <p>Morning team ☀️ I added the new welcome flow. The softer gradient feels much more like us.</p>
+                <div class="message-reaction">✨ <span>2</span></div>
+              </div>
+            </article>
+            <article class="message">
+              <span class="message-avatar avatar-eli">EB</span>
+              <div class="message-body">
+                <div class="message-meta"><strong>Eli Brooks</strong><time>10:46</time></div>
+                <p>Love this direction! <span class="mention">@Maya</span> the little motion detail is just right.</p>
+              </div>
+            </article>
+            <div class="message-note"><span class="note-icon">✦</span><span>Maya shared a code snippet</span><span class="note-time">10:48</span></div>
+            <article class="message own-message">
+              <span class="message-avatar avatar-you">JD</span>
+              <div class="message-body">
+                <div class="message-meta"><strong>You</strong><time>10:51</time></div>
+                <p>Nice. I’ll connect the button states and make sure reduced motion is covered.</p>
+              </div>
+            </article>
+          </div>
+          <form class="chat-composer" id="chat-form">
+            <label class="sr-only" for="chat-input">Write a message</label>
+            <textarea id="chat-input" rows="2" placeholder="Message your team..." maxlength="500"></textarea>
+            <div class="composer-toolbar">
+              <div class="composer-tools">
+                <button type="button" aria-label="Add attachment">＋</button>
+                <button type="button" aria-label="Add emoji">☺</button>
+                <span class="composer-hint">Be kind. Build together.</span>
+              </div>
+              <button class="send-button" type="submit" aria-label="Send message">
+                <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m17 3-6.5 14-2-5.5L3 9.5 17 3Z" /><path d="M8.5 11.5 12 8" /></svg>
+              </button>
+            </div>
+          </form>
+          <div class="privacy-note"><span>⌑</span> Just your team can see this conversation</div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

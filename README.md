@@ -9,22 +9,26 @@ A prototype real-time collaborative code editor built with React, Monaco, Yjs, S
 ```text
 backend/
   src/
+    config/         # environment loading and validation
     collaboration/   # Yjs/Socket.IO server integration
+    infrastructure/
+      database/      # MongoDB connection lifecycle
     app.js           # HTTP routes
     server.js        # HTTP server startup
+  test/              # backend tests
 frontend/
   src/
     app/             # Application shell and styles
     features/
       collaboration/ # Editor and participant UI
     main.jsx         # React entry point
-PROJECT_ROADMAP.md   # Product direction and proposed milestones
 ```
 
 ## Requirements
 
 - Node.js 20.19+ or 22.12+ (required by the current Vite version)
 - npm
+- MongoDB running locally on port `27017`
 
 ## Run locally
 
@@ -34,6 +38,14 @@ Install dependencies once in each application:
 cd backend
 npm install
 ```
+
+For local backend configuration, copy the example file:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+The backend defaults to `mongodb://localhost:27017/` and database `Orbit`. Keep `backend/.env` local; it is ignored by Git.
 
 In another terminal:
 
@@ -58,6 +70,10 @@ Open the Vite URL printed in the frontend terminal. Open the same URL in another
 
 The backend listens on port `3000`; its health endpoint is `http://localhost:3000/health`.
 
+## Local database
+
+The backend uses MongoDB at `mongodb://localhost:27017/` and database `Orbit` by default. Copy `backend/.env.example` to `backend/.env` to override these settings. The `.env` file is local-only and must never be committed.
+
 ## Verification
 
 Run these commands from `frontend/`:
@@ -67,7 +83,11 @@ npm run lint
 npm run build
 ```
 
-The backend currently has no automated test suite.
+Run backend configuration tests from `backend/`:
+
+```powershell
+npm test
+```
 
 ## Current limitations
 
@@ -76,4 +96,4 @@ The backend currently has no automated test suite.
 - Chat history, accounts, organizations, projects, and persistent editor history are not implemented.
 - The development CORS policy and server configuration need production hardening.
 
-See [PROJECT_ROADMAP.md](./PROJECT_ROADMAP.md) for the suggested product and engineering sequence.
+Internal design documents are kept locally in `docs/` and intentionally excluded from Git.

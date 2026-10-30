@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Local-only planning and design documents
+/docs/
+
 # Build output
 dist/
 dist-ssr/
